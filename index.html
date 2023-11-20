@@ -141,7 +141,7 @@
                 vertical-align: middle;
                 margin-left: 12px;
               "
-              >+48500 170 839</span
+              >+48 500 170 839</span
             >
           </div>
         </div>
@@ -265,19 +265,29 @@
     </div>
     <script>
       function createContact() {
-        // Numer telefonu i dodatkowe parametry do uzupełnienia
-        var phoneNumber = "+48500170839";
         var contactName = "Łukasz 'Simon' Szymczak";
+        var phoneNumber = "+48500170839";
 
-        // Tworzenie linku do formularza kontaktowego
-        var contactLink =
-          "tel:" +
-          encodeURIComponent(phoneNumber) +
-          "&contactName=" +
-          encodeURIComponent(contactName);
+        // Utwórz treść vCard
+        var vCardContent =
+          "BEGIN:VCARD\n" +
+          "VERSION:3.0\n" +
+          "FN:" +
+          contactName +
+          "\n" +
+          "TEL:" +
+          phoneNumber +
+          "\n" +
+          "END:VCARD";
 
-        // Otwarcie linku w nowym oknie/tabie
-        window.open(contactLink);
+        // Utwórz Blob z treścią vCard
+        var blob = new Blob([vCardContent], { type: "text/vcard" });
+
+        // Utwórz link do pobrania pliku vCard
+        var link = document.createElement("a");
+        link.href = window.URL.createObjectURL(blob);
+        link.download = "contact.vcf";
+        link.click();
       }
     </script>
   </body>
