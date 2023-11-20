@@ -43,6 +43,10 @@
           style="margin-right: 40px"
         />
       </div>
+      <button style="width: 100px; height: 100px" onclick="createContact()">
+        Dodaj nosafasfawy kontakt
+      </button>
+
       <div class="employee-info" style="text-align: center; padding-top: 40px">
         <img
           src="https://lh3.googleusercontent.com/d/1rzdg3Nmn6EMazSWPHohQNiGPQLkSpdf3"
@@ -259,23 +263,22 @@
         /></a>
       </div>
     </div>
-    <button onclick="createContact()">Dodaj nowy kontakt</button>
+    <script>
+      function createContact() {
+        // Numer telefonu i dodatkowe parametry do uzupełnienia
+        var phoneNumber = "+48500170839";
+        var contactName = "Łukasz 'Simon' Szymczak";
+
+        // Tworzenie linku do formularza kontaktowego
+        var contactLink =
+          "tel:" +
+          encodeURIComponent(phoneNumber) +
+          "&contactName=" +
+          encodeURIComponent(contactName);
+
+        // Otwarcie linku w nowym oknie/tabie
+        window.open(contactLink);
+      }
+    </script>
   </body>
-  <script>
-    function createContact() {
-      // Numer telefonu i dodatkowe parametry do uzupełnienia
-      var phoneNumber = "+48500170839";
-      var contactName = "Łukasz 'Simon' Szymczak";
-
-      // Tworzenie linku do formularza kontaktowego
-      var contactLink =
-        "tel:" +
-        encodeURIComponent(phoneNumber) +
-        "&contactName=" +
-        encodeURIComponent(contactName);
-
-      // Otwarcie linku w nowym oknie/tabie
-      window.open(contactLink);
-    }
-  </script>
 </html>
