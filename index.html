@@ -31,7 +31,7 @@
     }
 
     #popup {
-      width: 220px;
+      width: 230px;
       height: 200px;
       background-color: #fff;
       padding: 10px;
@@ -412,11 +412,10 @@
       }
 
       function createContact() {
-        var contactName = "test";
-        var phoneNumber = "+48123456789";
+        const contactName = "Łukasz Szymczyk";
+        const phoneNumber = "+48500170839";
 
-        // Utwórz treść vCard
-        var vCardContent =
+        const vCardContent =
           "BEGIN:VCARD\n" +
           "VERSION:3.0\n" +
           "FN:" +
@@ -427,11 +426,9 @@
           "\n" +
           "END:VCARD";
 
-        // Utwórz Blob z treścią vCard
-        var blob = new Blob([vCardContent], { type: "text/vcard" });
+        const blob = new Blob([vCardContent], { type: "text/vcard" });
 
-        // Utwórz link do pobrania pliku vCard
-        var link = document.createElement("a");
+        const link = document.createElement("a");
         link.href = window.URL.createObjectURL(blob);
         link.download = "contact.vcf";
         link.click();
