@@ -31,6 +31,36 @@
         #fff;
       position: relative;
     }
+    .buttons {
+      text-align: center;
+      margin-bottom: 34px;
+      font-size: 0;
+    }
+
+    .data-element {
+      background-color: #fff;
+      border-bottom: 1px dashed rgba(90, 90, 90, 0.25);
+      max-width: 312px;
+      margin-bottom: 10px;
+    }
+    .link-element {
+      font-size: 18px;
+      line-height: 18px;
+      color: #5a5a5a;
+      font-weight: 400;
+      vertical-align: middle;
+      padding-left: 12px;
+      text-decoration: none;
+    }
+
+    .popup-link-element {
+      font-size: 13px;
+      color: #5a5a5a;
+      font-weight: 400;
+      vertical-align: middle;
+      margin-left: 10px;
+      text-decoration: none;
+    }
 
     #overlay {
       display: none;
@@ -102,10 +132,7 @@
           founder & problem solver
         </h2>
       </div>
-      <div
-        class="buttons"
-        style="text-align: center; margin-bottom: 34px; font-size: 0"
-      >
+      <div class="buttons">
         <a href="tel:+48 500 170 839" style="padding-right: 8px"
           ><img
             src="https://lh3.googleusercontent.com/d/10tV5xAAilDhwZTEPH8OKasshUKcpTwd8"
@@ -121,15 +148,7 @@
       </div>
 
       <div class="data" style="margin: 0 24px 0 24px">
-        <div
-          class="phone"
-          style="
-            background-color: #fff;
-            border-bottom: 1px dashed rgba(90, 90, 90, 0.25);
-            max-width: 312px;
-            margin-bottom: 10px;
-          "
-        >
+        <div class="data-element">
           <div style="vertical-align: middle; padding: 8px 12px 8px 8px">
             <img
               src="https://lh3.googleusercontent.com/d/10BvudIv68lFhCXOoakn8ZokO2Qff3YGT
@@ -139,30 +158,12 @@
               width="16"
               style="vertical-align: middle"
             />
-            <a
-              href="tel:+48 500 170 839"
-              style="
-                font-size: 18px;
-                line-height: 18px;
-                color: #5a5a5a;
-                font-weight: 400;
-                vertical-align: middle;
-                padding-left: 12px;
-                text-decoration: none;
-              "
+            <a class="link-element" href="tel:+48 500 170 839"
               >+48 500 170 839</a
             >
           </div>
         </div>
-        <div
-          class="mail"
-          style="
-            background-color: #fff;
-            border-bottom: 1px dashed rgba(90, 90, 90, 0.25);
-            max-width: 312px;
-            margin-bottom: 10px;
-          "
-        >
+        <div class="data-element">
           <div style="vertical-align: middle; padding: 8px 12px 8px 8px">
             <img
               src="https://lh3.googleusercontent.com/d/1V81IeoRbaUVBnIS7x-yIpNdxgCalWYtu"
@@ -171,30 +172,12 @@
               width="16"
               style="vertical-align: middle"
             />
-            <a
-              href="mailto:Iszymczak@indentitygroup.pl"
-              style="
-                font-size: 18px;
-                line-height: 18px;
-                color: #5a5a5a;
-                font-weight: 400;
-                vertical-align: middle;
-                padding-left: 12px;
-                text-decoration: none;
-              "
+            <a class="link-element" href="mailto:Iszymczak@indentitygroup.pl"
               >Iszymczak@indentitygroup.pl</a
             >
           </div>
         </div>
-        <div
-          class="linkedin"
-          style="
-            background-color: #fff;
-            border-bottom: 1px dashed rgba(90, 90, 90, 0.25);
-            max-width: 312px;
-            margin-bottom: 10px;
-          "
-        >
+        <div class="data-element">
           <div style="vertical-align: middle; padding: 8px 12px 8px 8px">
             <img
               src="https://lh3.googleusercontent.com/d/1QxI3Dwg3URjMcENOx38OGtQKZERjYuJc"
@@ -204,29 +187,14 @@
               style="vertical-align: middle"
             />
             <a
+              class="link-element"
               href="https://pl.linkedin.com/in/lssdesigner"
               target="_blank"
-              style="
-                font-size: 18px;
-                line-height: 18px;
-                color: #5a5a5a;
-                font-weight: 400;
-                vertical-align: middle;
-                padding-left: 12px;
-                text-decoration: none;
-              "
               >Iszymczak-id</a
             >
           </div>
         </div>
-        <div
-          class="website"
-          style="
-            background-color: #fff;
-            border-bottom: 1px dashed rgba(90, 90, 90, 0.25);
-            max-width: 312px;
-          "
-        >
+        <div class="data-element">
           <div style="padding: 8px 12px 8px 8px">
             <img
               src="https://lh3.googleusercontent.com/d/1SBQOqU8g90RU_uTEClTnEXWykF8MCOeF"
@@ -236,17 +204,9 @@
               style="vertical-align: middle"
             />
             <a
+              class="link-element"
               href="http://identitygroup.pl/"
               target="_blank"
-              style="
-                font-size: 18px;
-                line-height: 18px;
-                color: #5a5a5a;
-                font-weight: 400;
-                vertical-align: middle;
-                padding-left: 12px;
-                text-decoration: none;
-              "
               >www.identitygroup.pl</a
             >
           </div>
@@ -255,7 +215,6 @@
       <div
         class="floating-buttons"
         style="position: absolute; right: 24px; bottom: 1px"
-        ;
       >
         <a onclick="openPopup()">
           <img
@@ -295,16 +254,8 @@
             style="vertical-align: middle"
           />
           <a
+            class="popup-link-element"
             href="mailto:Iszymczak@indentitygroup.pl"
-            style="
-              font-size: 13px;
-              color: #5a5a5a;
-              font-weight: 400;
-              vertical-align: middle;
-              margin-left: 10px;
-              text-decoration: none;
-              cursor: pointer;
-            "
             >Iszymczak@indentitygroup.pl</a
           >
         </div>
@@ -316,19 +267,7 @@
             width="20"
             style="vertical-align: middle"
           />
-          <a
-            href="sms:+48883476500"
-            style="
-              font-size: 13px;
-              color: #5a5a5a;
-              font-weight: 400;
-              vertical-align: middle;
-              margin-left: 10px;
-              text-decoration: none;
-              cursor: pointer;
-            "
-            >SMS</a
-          >
+          <a class="popup-link-element" href="sms:+48500170839">SMS</a>
         </div>
         <div style="vertical-align: middle; padding: 8px 8px 8px 0">
           <img
@@ -339,17 +278,9 @@
             style="vertical-align: middle"
           />
           <a
+            class="popup-link-element"
             href="https://pl.linkedin.com/in/lssdesigner"
             target="_blank"
-            style="
-              font-size: 13px;
-              color: #5a5a5a;
-              font-weight: 400;
-              vertical-align: middle;
-              margin-left: 10px;
-              text-decoration: none;
-              cursor: pointer;
-            "
             >Iszymczak-id</a
           >
         </div>
