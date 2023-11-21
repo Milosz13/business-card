@@ -265,7 +265,7 @@
             width="66"
           />
         </a>
-        <a onclick="createContact()" style="display: block">
+        <a onclick="createContact()" style="display: block" id="downloadLink">
           <img
             src="https://lh3.googleusercontent.com/d/1edsN7LDPN1n1AofPOzsFaLkbJu7iD4Fg"
             alt=""
@@ -441,7 +441,17 @@
         const link = document.createElement("a");
         link.href = window.URL.createObjectURL(blob);
         link.download = "contact.vcf";
-        link.click();
+
+        // Dodajemy atrybut onclick do uruchamiania funkcji createContact()
+        link.onclick = function () {
+          createContact();
+          document.getElementById("overlay").style.display = "none"; // Dodajemy, aby zamknąć popup po pobraniu
+        };
+
+        // Zamieniamy kliknięcie na link, aby uruchomić funkcję createContact()
+        document.getElementById("downloadLink").onclick = function () {
+          link.click();
+        };
       }
     </script>
   </body>
