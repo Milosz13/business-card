@@ -17,6 +17,20 @@
       padding: 0;
       box-sizing: border-box;
     }
+    body {
+      font-family: "Khand", sans-serif;
+    }
+
+    .container {
+      max-width: 360px;
+      background: linear-gradient(
+          0deg,
+          rgba(90, 90, 90, 0.03) 0%,
+          rgba(90, 90, 90, 0.03) 100%
+        ),
+        #fff;
+      position: relative;
+    }
 
     #overlay {
       display: none;
@@ -42,20 +56,8 @@
     }
   </style>
 
-  <body style="font-family: Khand">
-    <div
-      class="container"
-      style="
-        max-width: 360px;
-        background: linear-gradient(
-            0deg,
-            rgba(90, 90, 90, 0.03) 0%,
-            rgba(90, 90, 90, 0.03) 100%
-          ),
-          #fff;
-        position: relative;
-      "
-    >
+  <body>
+    <div class="container">
       <div class="logo" style="text-align: right">
         <img
           src="https://lh3.googleusercontent.com/d/1c1BwC-T9LLXl5UsDrXKQku9sqlDmWbKI"
@@ -65,9 +67,6 @@
           style="margin-right: 40px"
         />
       </div>
-      <!-- <button style="width: 100px; height: 100px" onclick="createContact()">
-        Dodaj nosafasfawy kontakt
-      </button> -->
 
       <div class="employee-info" style="text-align: center; padding-top: 40px">
         <img
@@ -101,27 +100,6 @@
         </h2>
       </div>
       <div class="buttons" style="text-align: center; margin-bottom: 34px">
-        <!-- <a href="" style=""
-        ><div
-          style="
-            height: 40px;
-            width: 151.5px;
-            background: #5a5a5a;
-            border-radius: 4px;
-            text-align: center;
-            align-items: center;
-          "
-        >
-          <img
-            src="call.png"
-            width="24"
-            height="24"
-            alt=""
-            style="vertical-align: middle"
-          />
-          <span style="vertical-align: middle">Call</span>
-        </div></a
-      > -->
         <a href="tel:+48 500 170 839" style="padding-right: 8px"
           ><img
             src="https://lh3.googleusercontent.com/d/10tV5xAAilDhwZTEPH8OKasshUKcpTwd8"
@@ -156,6 +134,7 @@
               style="vertical-align: middle"
             />
             <a
+              href="tel:+48 500 170 839"
               style="
                 font-size: 18px;
                 line-height: 18px;
@@ -186,7 +165,8 @@
               width="16"
               style="vertical-align: middle"
             />
-            <span
+            <a
+              href="mailto:Iszymczak@indentitygroup.pl"
               style="
                 font-size: 18px;
                 line-height: 18px;
@@ -194,8 +174,9 @@
                 font-weight: 400;
                 vertical-align: middle;
                 padding-left: 12px;
+                text-decoration: none;
               "
-              >Iszymczak@indentitygroup.pl</span
+              >Iszymczak@indentitygroup.pl</a
             >
           </div>
         </div>
@@ -319,6 +300,28 @@
               cursor: pointer;
             "
             >Iszymczak@indentitygroup.pl</a
+          >
+        </div>
+        <div style="vertical-align: middle; padding: 8px 8px 8px 0">
+          <img
+            src="https://lh3.googleusercontent.com/d/1V81IeoRbaUVBnIS7x-yIpNdxgCalWYtu"
+            alt=""
+            height="20"
+            width="20"
+            style="vertical-align: middle"
+          />
+          <a
+            href="sms:+48883476500"
+            style="
+              font-size: 13px;
+              color: #5a5a5a;
+              font-weight: 400;
+              vertical-align: middle;
+              margin-left: 10px;
+              text-decoration: none;
+              cursor: pointer;
+            "
+            >sms</a
           >
         </div>
         <div style="vertical-align: middle; padding: 8px 8px 8px 0">
