@@ -340,6 +340,7 @@
         const contactName = "Łukasz Szymczak";
         const phoneNumber = "+48500170839";
         const emailAddress = "lszymczak@identitygroup.pl";
+        const homepage = "http://identitygroup.pl/";
 
         const vCardContent =
           "BEGIN:VCARD\n" +
@@ -353,7 +354,10 @@
           "EMAIL:" +
           emailAddress +
           "\n" +
-          "END:VCARD";
+          homepage
+            ? "URL:" + homepage + "\n"
+            : "";
+        ("END:VCARD");
 
         const blob = new Blob([vCardContent], { type: "text/vcard" });
 
