@@ -357,17 +357,12 @@
 
         const blob = new Blob([vCardContent], { type: "text/vcard" });
 
-        const link = document.createElement("a");
+        const link = document.getElementById("downloadLink");
         link.href = window.URL.createObjectURL(blob);
         link.download = "contact.vcf";
 
         link.onclick = function () {
-          createContact();
-          document.getElementById("overlay").style.display = "none";
-        };
-
-        document.getElementById("downloadLink").onclick = function () {
-          link.click();
+          document.getElementById("overlay").style.display = "none"; // Możesz dodać dodatkowe instrukcje, jeśli są potrzebne
         };
       }
     </script>
