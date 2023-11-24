@@ -354,10 +354,8 @@
           "EMAIL:" +
           emailAddress +
           "\n" +
-          homepage
-            ? "URL:" + homepage + "\n"
-            : "";
-        ("END:VCARD");
+          (homepage ? "URL:" + homepage + "\n" : "") +
+          "END:VCARD";
 
         const blob = new Blob([vCardContent], { type: "text/vcard" });
 
