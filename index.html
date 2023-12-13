@@ -313,14 +313,25 @@
 
     <script>
       function openLinkedInProfile(event) {
+        // Sprawdź, czy urządzenie to mobilne
         const isMobile =
           /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
             navigator.userAgent
           );
 
+        // Jeśli to mobilne urządzenie, anuluj domyślne działanie linku i otwórz w aplikacji LinkedIn
         if (isMobile) {
           event.preventDefault();
-          window.location.href = "linkedin://#profile/in/lssdesigner";
+
+          // Android
+          if (navigator.userAgent.match(/Android/i)) {
+            window.location.href = "linkedin://profile/lssdesigner";
+          }
+          // iOS
+          else if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
+            window.location.href =
+              "https://www.linkedin.com/profile/view?id=lssdesigner";
+          }
         }
       }
 
