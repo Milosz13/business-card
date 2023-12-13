@@ -406,52 +406,35 @@
       }
 
       function createContact() {
-        const contactName = "Łukasz Szymczak";
-        const phoneNumber = "+48500170839";
-        const emailAddress = "lszymczak@identitygroup.pl";
-        const homepage = "http://identitygroup.pl/";
+        const contactName = "Aamash Mukhtar";
+        const phoneNumber = "+971554149343";
+        const emailAddress = "aamash.mukhtar@skillspark.com";
+        const homepage = "https://www.skillspark.com/";
 
-        // Ścieżka do zdjęcia
-        const photoPath =
-          "https://lh3.googleusercontent.com/d/1rzdg3Nmn6EMazSWPHohQNiGPQLkSpdf3";
+        const vCardContent =
+          "BEGIN:VCARD\n" +
+          "VERSION:3.0\n" +
+          "FN:" +
+          contactName +
+          "\n" +
+          "TEL:" +
+          phoneNumber +
+          "\n" +
+          "EMAIL:" +
+          emailAddress +
+          "\n" +
+          (homepage ? "URL:" + homepage + "\n" : "") +
+          "END:VCARD";
 
-        // Function to convert image URL to base64
-        function getBase64Image(url, callback) {
-          var img = new Image();
-          img.crossOrigin = "Anonymous";
-          img.onload = function () {
-            var canvas = document.createElement("canvas");
-            canvas.width = img.width;
-            canvas.height = img.height;
-            var ctx = canvas.getContext("2d");
-            ctx.drawImage(img, 0, 0);
-            var dataURL = canvas.toDataURL("image/png");
-            callback(dataURL.replace(/^data:image\/(png|jpg);base64,/, ""));
-          };
-          img.src = url;
-        }
+        const blob = new Blob([vCardContent], { type: "text/vcard" });
 
-        // Convert image URL to base64 and include in vCard
-        getBase64Image(photoPath, function (base64Image) {
-          const vCardContent = `BEGIN:VCARD
-            VERSION:3.0
-            FN:${contactName}
-            TEL:${phoneNumber}
-            EMAIL:${emailAddress}
-            ${homepage ? "URL:" + homepage : ""}
-            ${base64Image ? "PHOTO;TYPE=JPEG;ENCODING=b:" + base64Image : ""}
-            END:VCARD`;
+        const link = document.getElementById("downloadLink");
+        link.href = window.URL.createObjectURL(blob);
+        link.download = "contact.vcf";
 
-          const blob = new Blob([vCardContent], { type: "text/vcard" });
-
-          const link = document.getElementById("downloadLink");
-          link.href = window.URL.createObjectURL(blob);
-          link.download = "contact.vcf";
-
-          link.onclick = function () {
-            document.getElementById("overlay").style.display = "none";
-          };
-        });
+        link.onclick = function () {
+          document.getElementById("overlay").style.display = "none";
+        };
       }
     </script>
   </body>
