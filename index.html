@@ -404,6 +404,7 @@
             copyMessage.textContent = "error failed to copy";
           });
       }
+      // Function to convert image URL to base64
       function getBase64Image(url, callback) {
         var img = new Image();
         img.crossOrigin = "Anonymous";
@@ -419,6 +420,7 @@
         img.src = url;
       }
 
+      // Function to create vCard
       function createContact(base64Image) {
         const contactName = "Łukasz Szymczak";
         const phoneNumber = "+48500170839";
