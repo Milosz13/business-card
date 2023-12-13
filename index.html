@@ -404,6 +404,11 @@
             copyMessage.textContent = "error failed to copy";
           });
       }
+
+      // Ścieżka do zdjęcia
+      const photoPath =
+        "https://lh3.googleusercontent.com/d/1rzdg3Nmn6EMazSWPHohQNiGPQLkSpdf3";
+
       // Function to convert image URL to base64
       function getBase64Image(url, callback) {
         var img = new Image();
@@ -420,37 +425,43 @@
         img.src = url;
       }
 
-      // Function to create vCard
       function createContact(base64Image) {
         const contactName = "Łukasz Szymczak";
         const phoneNumber = "+48500170839";
         const emailAddress = "lszymczak@identitygroup.pl";
         const homepage = "http://identitygroup.pl/";
 
-        const vCardContent = `BEGIN:VCARD
-        VERSION:3.0
-        FN:${contactName}
-        TEL:${phoneNumber}
-        EMAIL:${emailAddress}
-        ${homepage ? "URL:" + homepage : ""}
-        ${base64Image ? "PHOTO;TYPE=PNG;ENCODING=b:" + base64Image : ""}
-        END:VCARD`;
+        // Convert image URL to base64 and include in vCard
+        getBase64Image(photoPath, function (base64Image) {
+          const vCardContent =
+            "BEGIN:VCARD\n" +
+            "VERSION:3.0\n" +
+            "FN:" +
+            contactName +
+            "\n" +
+            "TEL:" +
+            phoneNumber +
+            "\n" +
+            "EMAIL:" +
+            emailAddress +
+            "\n" +
+            (homepage ? "URL:" + homepage + "\n" : "") +
+            (base64Image
+              ? "PHOTO;TYPE=JPEG;ENCODING=b:" + base64Image + "\n"
+              : "") +
+            "END:VCARD";
 
-        const blob = new Blob([vCardContent], { type: "text/vcard" });
+          const blob = new Blob([vCardContent], { type: "text/vcard" });
 
-        const link = document.getElementById("downloadLink");
-        link.href = window.URL.createObjectURL(blob);
-        link.download = "contact.vcf";
+          const link = document.getElementById("downloadLink");
+          link.href = window.URL.createObjectURL(blob);
+          link.download = "contact.vcf";
 
-        link.onclick = function () {
-          document.getElementById("overlay").style.display = "none";
-        };
+          link.onclick = function () {
+            document.getElementById("overlay").style.display = "none";
+          };
+        });
       }
-
-      // Call getBase64Image and pass createVCard as a callback
-      const photoPath =
-        "https://lh3.googleusercontent.com/d/1rzdg3Nmn6EMazSWPHohQNiGPQLkSpdf3";
-      getBase64Image(photoPath, createContact);
     </script>
   </body>
 </html>
