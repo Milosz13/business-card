@@ -433,7 +433,7 @@
         TEL:${phoneNumber}
         EMAIL:${emailAddress}
         ${homepage ? "URL:" + homepage : ""}
-        ${base64Image ? "PHOTO;TYPE=JPEG;ENCODING=b:" + base64Image : ""}
+        ${base64Image ? "PHOTO;TYPE=PNG;ENCODING=b:" + base64Image : ""}
         END:VCARD`;
 
         const blob = new Blob([vCardContent], { type: "text/vcard" });
