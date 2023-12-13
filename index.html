@@ -264,7 +264,7 @@
           />
           <a
             class="popup-link-element"
-            href="https://pl.linkedin.com/in/lssdesigner"
+            href="linkedin://#profile/in/lssdesigner"
             target="_blank"
             >lszymczak-id</a
           >
@@ -323,18 +323,19 @@
         const inputField = document.getElementById("myInput");
         const copyMessage = document.getElementById("copyMessage");
 
-        try {
-          document.execCommand("copy");
+        navigator.clipboard
+          .writeText(inputField.value)
+          .then(() => {
+            copyMessage.textContent = "copied to clipboard";
 
-          copyMessage.textContent = "Skopiowano do schowka";
-
-          setTimeout(function () {
-            copyMessage.textContent = "";
-          }, 1500);
-        } catch (err) {
-          console.error("Błąd podczas kopiowania do schowka:", err);
-          copyMessage.textContent = "Błąd podczas kopiowania do schowka";
-        }
+            setTimeout(function () {
+              copyMessage.textContent = "";
+            }, 1500);
+          })
+          .catch((err) => {
+            console.error("error", err);
+            copyMessage.textContent = "error failed to copy";
+          });
       }
 
       function createContact() {
@@ -342,6 +343,10 @@
         const phoneNumber = "+48500170839";
         const emailAddress = "lszymczak@identitygroup.pl";
         const homepage = "http://identitygroup.pl/";
+
+        // Ścieżka do zdjęcia
+        const photoPath =
+          "https://lh3.googleusercontent.com/d/1rzdg3Nmn6EMazSWPHohQNiGPQLkSpdf3";
 
         const vCardContent =
           "BEGIN:VCARD\n" +
@@ -356,6 +361,7 @@
           emailAddress +
           "\n" +
           (homepage ? "URL:" + homepage + "\n" : "") +
+          (photoPath ? "PHOTO:" + photoPath + "\n" : "") +
           "END:VCARD";
 
         const blob = new Blob([vCardContent], { type: "text/vcard" });
