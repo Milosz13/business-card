@@ -78,6 +78,10 @@
       max-width: 312px;
       margin-bottom: 10px;
     }
+    .data-element-content {
+      vertical-align: middle;
+      padding: 8px 12px 8px 8px;
+    }
     .link-element {
       font-size: 18px;
       line-height: 18px;
@@ -110,7 +114,7 @@
     }
 
     #popup {
-      width: 230px;
+      width: 250px;
       height: 230px;
       background-color: #fff;
       padding: 10px;
@@ -118,6 +122,15 @@
 
     #closeButton {
       cursor: pointer;
+    }
+
+    #myInput {
+      margin: 0 10px;
+      width: 100px;
+      height: 20px;
+      border: 1px solid #5a5a5a;
+      font-family: Khand;
+      vertical-align: middle;
     }
   </style>
 
@@ -143,7 +156,7 @@
 
       <div class="data">
         <div class="data-element">
-          <div style="vertical-align: middle; padding: 8px 12px 8px 8px">
+          <div class="data-element-content">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -165,7 +178,7 @@
           </div>
         </div>
         <div class="data-element">
-          <div style="vertical-align: middle; padding: 8px 12px 8px 8px">
+          <div class="data-element-content">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -187,7 +200,7 @@
           </div>
         </div>
         <div class="data-element">
-          <div style="vertical-align: middle; padding: 8px 12px 8px 8px">
+          <div class="data-element-content">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -211,7 +224,7 @@
           </div>
         </div>
         <div class="data-element">
-          <div style="padding: 8px 12px 8px 8px">
+          <div class="data-element-content">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -255,7 +268,7 @@
     </div>
     <div id="overlay">
       <div id="popup">
-        <div class="logo" style="text-align: right">
+        <div style="text-align: right">
           <img
             src="assets/x.png"
             id="closeButton"
@@ -330,14 +343,6 @@
             type="text"
             id="myInput"
             value="https://idg.dkonto.pl/e-card/"
-            style="
-              margin: 0 10px;
-              width: 100px;
-              height: 20px;
-              border: 1px solid #5a5a5a;
-              font-family: Khand;
-              vertical-align: middle;
-            "
           />
           <button
             onclick="copyText()"
@@ -360,13 +365,11 @@
 
     <script>
       function openLinkedInProfile(event) {
-        // Sprawdź, czy urządzenie to mobilne
         const isMobile =
           /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
             navigator.userAgent
           );
 
-        // Jeśli to mobilne urządzenie, anuluj domyślne działanie linku i otwórz w aplikacji LinkedIn
         if (isMobile) {
           event.preventDefault();
 
