@@ -24,6 +24,7 @@
 
     .container {
       max-width: 360px;
+      width: 360px;
       background: linear-gradient(
           0deg,
           rgba(90, 90, 90, 0.03) 0%,
@@ -33,10 +34,42 @@
       position: relative;
       margin: auto;
     }
+    .logo {
+      text-align: right;
+    }
+
+    .logo img {
+      margin-right: 40px;
+    }
+
+    .employee-info {
+      text-align: center;
+      padding-top: 40px;
+    }
+
+    .employee-info h1 {
+      margin: 34px 0 12px 0;
+      font-size: 20px;
+      line-height: 20px;
+      font-weight: 500;
+      font-family: Khand;
+      color: #5a5a5a;
+    }
+
+    .employee-info h2 {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 16px;
+      color: #d21e1e;
+      margin: 0 0 34px 0;
+    }
     .buttons {
       text-align: center;
       margin-bottom: 34px;
-      font-size: 0;
+    }
+
+    .data {
+      margin: 0 24px 0 24px;
     }
 
     .data-element {
@@ -90,44 +123,14 @@
 
   <body>
     <div class="container">
-      <div class="logo" style="text-align: right; font-size: 0">
-        <img
-          src="assets/logo.png"
-          width="40"
-          height="68"
-          alt="logo"
-          style="margin-right: 40px"
-        />
+      <div class="logo">
+        <img src="assets/logo.png" width="40" height="68" alt="logo" />
       </div>
 
-      <div
-        class="employee-info"
-        style="text-align: center; padding-top: 40px; font-size: 0"
-      >
+      <div class="employee-info">
         <img src="assets/photo.png" width="100" height="100" alt="avatar" />
-        <h1
-          style="
-            margin: 34px 0 12px 0;
-            font-size: 20px;
-            line-height: 20px;
-            font-weight: 500;
-            font-family: Khand;
-            color: #5a5a5a;
-          "
-        >
-          Łukasz 'Simon' Szymczak
-        </h1>
-        <h2
-          style="
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 16px;
-            color: #d21e1e;
-            margin: 0 0 34px 0;
-          "
-        >
-          founder & problem solver
-        </h2>
+        <h1>Łukasz 'Simon' Szymczak</h1>
+        <h2>founder & problem solver</h2>
       </div>
       <div class="buttons">
         <a href="tel:+48 500 170 839" style="padding-right: 8px"
@@ -138,7 +141,7 @@
         /></a>
       </div>
 
-      <div class="data" style="margin: 0 24px 0 24px">
+      <div class="data">
         <div class="data-element">
           <div style="vertical-align: middle; padding: 8px 12px 8px 8px">
             <svg
